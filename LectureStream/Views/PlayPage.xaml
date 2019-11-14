@@ -18,26 +18,23 @@
              </ContentPage.Padding>
      <ContentPage.Content>
     <StackLayout x:Name="layout">
-            <StackLayout>
              <AbsoluteLayout  HorizontalOptions="FillAndExpand" VerticalOptions="Center"> 
                  <ContentView BackgroundColor="Black" x:Name="VideoView" HeightRequest="240" > 
                         <ios:UIView />
                         <androidWidget:VideoView  x:Arguments="{x:Static androidContext:MainActivity.Instance}"  />
                     </ContentView>           
                 </AbsoluteLayout> 
-                </StackLayout>
+
              <Button Text="Back" Pressed="BackButton"/>
              <Label Text="Title" /> 
              <Label Text="{Binding Album}" FontSize="Large"/>
     <StackLayout Padding="0,-10,0,0">        
             <ScrollView Orientation="Vertical">                            
-                      <StackLayout>
                 <ScrollView Orientation="Horizontal"  >      
                 <ContentView Padding="10,5,10,10"  HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="130">
         <Services:RepeaterView Orientation="Horizontal" ItemsSource="{Binding Path=Recommended}" Spacing="10" >  
         <Services:RepeaterView.ItemTemplate>
-               <DataTemplate >  <ViewCell> <Grid>
-             
+               <DataTemplate>   <ViewCell>             
                            <Frame WidthRequest="140" HasShadow="true" MinimumHeightRequest="150" HeightRequest="150">  
                                     <Frame.GestureRecognizers>   
                                     <TapGestureRecognizer Tapped="Handle_Tapped" CommandParameter="{Binding .}"  NumberOfTapsRequired="1"/>    
@@ -53,14 +50,13 @@
                                         </AbsoluteLayout> 
                                            </StackLayout>                                          
                                   </Frame>                     
-                                           </Grid> </ViewCell>
+                                  </ViewCell>
                </DataTemplate>
        </Services:RepeaterView.ItemTemplate>
        </Services:RepeaterView>
                     </ContentView>
                   </ScrollView>
-                      <StackLayout>
-                </StackLayout>               
+                      <StackLayout>              
                     </StackLayout>
             </ScrollView>           
     </StackLayout>

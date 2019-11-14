@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{A55F3CB9-779C-4145-BEF4-C35BE6648DC2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LectureStream/Views/PlayPage.xaml">
+    <Files>
+      <File FileName="LectureStream/Views/PlayPage.xaml" />
+      <File FileName="LectureStream/Views/PlayPage.xaml.cs" Line="12" Column="48" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LectureStream" expanded="True">
+            <Node name="LectureStream" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="PlayPage.xaml" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.LectureStream.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A6E5C7B2-B24D-4DE0-925C-6AF1395BF317" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../LectureStream.Android/Implementations/VideoPlayer.cs" line="20" offsetX="339" offsetY="343" expression="view" liveUpdate="False" />
+    <Watch file="../../../LectureStream.Android/Implementations/VideoPlayer.cs" line="22" offsetX="670" offsetY="315" expression="videoView" liveUpdate="False" />
+    <Watch file="../../../LectureStream.Android/MainActivity.cs" line="84" offsetX="750" offsetY="1245" expression="Permission.Granted" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.LectureStream.Android PreferredExecutionTarget="Android.new_device" />
+  <MultiItemStartupConfigurations />
+</Properties>
