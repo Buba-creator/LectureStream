@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:local="clr-namespace:LectureStream" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:Embed="clr-namespace:LectureStream.Services"
+             x:Class="LectureStream.Views.SectionView">
+    <ContentView.Content>
+        <StackLayout>        
+           <StackLayout>
+           <ListView x:Name="History" ItemSelected="Handle_ItemSelected" >
+                <ListView.ItemTemplate><!--Bind item source-->
+                <DataTemplate>
+                      <ViewCell>
+                                <StackLayout Orientation="Horizontal"><Image Source="{Embed:EmbeddedImage LectureStream.Resource.BunnyImage.jpg}" /> <StackLayout Orientation="Vertical"><Label Text="Last Watched"/> <Label Text="Big bunny"/></StackLayout> </StackLayout>
+                            </ViewCell>                                                                           
+                   </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                </StackLayout>
+       <!--flowlist's circular images to list the courses--> 
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LectureStream.Views.MasterPage"
+             xmlns:EmbbedImg="clr-namespace:LectureStream.Services"
+             xmlns:local="clr-namespace:LectureStream"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             Title="Menu"
+            >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Transparent">
+        <Image Source="{EmbbedImg:EmbeddedImage ResourceId=LectureStream.Images.Master.jpg}" HorizontalOptions="Start"/>
+         <flv:FlowListView FlowColumnCount="2" ItemsSource="{Binding }">
+                <flv:FlowListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Image Source="{EmbbedImg:EmbeddedImage ResourceId=LectureStream.Resource.Full_screen.png}"/>
+                            </StackLayout>                            
+                        </ViewCell>
+                    </DataTemplate>
+                </flv:FlowListView.ItemTemplate>
+            </flv:FlowListView>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

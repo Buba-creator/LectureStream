@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:local="clr-namespace:LectureStream" 
+             xmlns:Services="clr-namespace:LectureStream.Services"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LectureStream.Views.HomeView"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+             >      
+       <ScrollView Orientation="Vertical">  <StackLayout>       
+        <StackLayout Padding="5">
+            <Label Text="Recents"/>
+        </StackLayout>           
+            <!---Scroll View-->
+            <ScrollView Orientation="Horizontal"  >              
+        <ContentView Padding="10,5,10,10"  IsVisible="true" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="0" HeightRequest="130" >
+     <Services:RepeaterView Orientation="Horizontal" ItemsSource="{Binding Path=YourChoice}" Spacing="10" VerticalOptions=" Fill" HorizontalOptions="Fill">          
+ <Services:RepeaterView.ItemTemplate>
+               <DataTemplate  >  
+                   <ViewCell><Grid>
+                           <Frame WidthRequest="140" HasShadow="true" MinimumHeightRequest="150" HeightRequest="150"  >  
+                                    <Frame.GestureRecognizers>   
+                                    <TapGestureRecognizer Tapped="Handle_Tapped" CommandParameter="{Binding .}"  NumberOfTapsRequired="1"/>    
+                                    </Frame.GestureRecognizers> 
+                                  <StackLayout Padding="-17,-17,-17,-30">
+                                           <Image VerticalOptions="Start" HorizontalOptions="Fill" Source="https://cdn2.vectorstock.com/i/1000x1000/76/41/happy-bunny-cartoon-in-the-hole-vector-20757641.jpg" Aspect="AspectFill" /> 
+                                      <AbsoluteLayout>  
+                                            <StackLayout BackgroundColor="White" x:Name="WhiteBackGround" AbsoluteLayout.LayoutFlags="WidthProportional" AbsoluteLayout.LayoutBounds="0,-39,1,40" HeightRequest="500" >                                                                                  
+                                                  <StackLayout Padding="2,2,2,2" >  <Label FontSize="Small" LineBreakMode="TailTruncation" Text="Title" TextColor="Black"/>
+                                                <StackLayout Orientation="Horizontal" Padding="0,-5,0,0"><Label FontSize="Micro" Text="jhgfzxcvbnbvhgcfxcgv" LineBreakMode="TailTruncation"  TextColor="Blue"/>  <Label FontSize="Micro" LineBreakMode="TailTruncation" Text="hjgfdsfgbvcfgbvgf" TextColor="Black"/> </StackLayout>
+                                           </StackLayout> 
+                                            </StackLayout> 
+                                        
+                                        </AbsoluteLayout> 
+                                  </StackLayout>  
+                           </Frame>                                          
+                      </Grid></ViewCell>
+               </DataTemplate>
+           </Services:RepeaterView.ItemTemplate>
+      </Services:RepeaterView>
+        </ContentView>   
+        </ScrollView>
+            <!---Scroll View END-->
+         <StackLayout Padding="5">
+            <Label Text="Suggested" />
+        </StackLayout>
+            
+       <!---Scroll View-->
+            <ScrollView Orientation="Horizontal"  >
+        <ContentView Padding="10,5,10,10"  HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="130" >
+     <Services:RepeaterView Orientation="Horizontal" ItemsSource="{Binding YourChoice}" Spacing="10" VerticalOptions=" Fill" HorizontalOptions="Fill">
+          
+ <Services:RepeaterView.ItemTemplate>
+               <DataTemplate >     
+                    <ViewCell>
+                                    <Grid>
+                           <Frame WidthRequest="140" IsVisible="true" HasShadow="true" MinimumHeightRequest="150" HeightRequest="150"  >
+                                    <Frame.GestureRecognizers>   
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Handle_Tapped"  NumberOfTapsRequired="1"/>    
+                                         </Frame.GestureRecognizers> 
+                                  <StackLayout Padding="-17,-17,-17,-30">                              
+                                  <Image VerticalOptions="Start" HorizontalOptions="Fill" Aspect="AspectFill" Source="https://cdn2.vectorstock.com/i/1000x1000/76/41/happy-bunny-cartoon-in-the-hole-vector-20757641.jpg" /> 
+                                      <AbsoluteLayout>   <StackLayout BackgroundColor="White" AbsoluteLayout.LayoutFlags="WidthProportional" AbsoluteLayout.LayoutBounds="0,-39,1,40" HeightRequest="500" >                         
+                                                  <StackLayout Padding="2,2,2,2" >  <Label FontSize="Small" LineBreakMode="TailTruncation" Text="ljhfgdfsdadfghjkhgfderwrtyuh" TextColor="Black"/>
+                                                <StackLayout Orientation="Horizontal" Padding="0,-5,0,0"><Label FontSize="Micro" Text="jhgfzxcvbnbvhgcfxcgv" LineBreakMode="TailTruncation"  TextColor="Blue"/>  <Label FontSize="Micro" LineBreakMode="TailTruncation" Text="hjgfdsfgbvcfgbvgf" TextColor="Black"/> </StackLayout>
+                                           </StackLayout> </StackLayout>  </AbsoluteLayout> 
+                                           </StackLayout>                     
+                                  </Frame>                                      
+                                    </Grid>
+                                    
+                                </ViewCell>
+               </DataTemplate>
+           </Services:RepeaterView.ItemTemplate>
+      </Services:RepeaterView>
+        </ContentView>   
+        </ScrollView>
+            <!---Scroll View END-->
+            
+             <StackLayout Padding="5">
+            <Label Text="Most Viewed" />
+        </StackLayout>
+             <!---Scroll View-->
+            <ScrollView Orientation="Horizontal"  >
+        <ContentView Padding="10,20,10,10"  HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="130" >
+     <Services:RepeaterView Orientation="Horizontal" ItemsSource="{Binding MostViewed}"  Spacing="10" VerticalOptions=" Fill" HorizontalOptions="Fill">
+ <Services:RepeaterView.ItemTemplate>
+               <DataTemplate >     
+                 <ViewCell>
+                                    <Grid>
+                             <Frame WidthRequest="140" IsVisible="true" HasShadow="true" BackgroundColor="Gray" MinimumHeightRequest="150" HeightRequest="150"  >
+                                   <Frame.GestureRecognizers>   
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" NumberOfTapsRequired="1" Tapped="Handle_Tapped"/>    
+                                         </Frame.GestureRecognizers> 
+                                     
+                                  <StackLayout IsVisible="true" Padding="-17,-17,-17,-30">                              
+                                  <Image VerticalOptions="Start" HorizontalOptions="Fill" Aspect="AspectFill" Source="https://cdn2.vectorstock.com/i/1000x1000/76/41/happy-bunny-cartoon-in-the-hole-vector-20757641.jpg" /> 
+                                      <AbsoluteLayout>   <StackLayout BackgroundColor="White" AbsoluteLayout.LayoutFlags="WidthProportional" AbsoluteLayout.LayoutBounds="0,-39,1,40" HeightRequest="500" >                         
+                                                  <StackLayout Padding="2,2,2,2" >  <Label FontSize="Small" LineBreakMode="TailTruncation" Text="ljhfgdfsdadfghjkhgfderwrtyuh" TextColor="Black"/>
+                                                <StackLayout Orientation="Horizontal" Padding="0,-5,0,0"><Label FontSize="Micro" Text="jhgfzxcvbnbvhgcfxcgv" LineBreakMode="TailTruncation"  TextColor="Blue"/>  <Label FontSize="Micro" LineBreakMode="TailTruncation" Text="hjgfdsfgbvcfgbvgf" TextColor="Black"/> </StackLayout>
+                                           </StackLayout> </StackLayout>  </AbsoluteLayout> 
+                                           </StackLayout>                     
+                                  </Frame>  
+                                    
+                              <lottie:AnimationView
+                    IsVisible="false"
+                    x:Name="animationView" 
+                    Animation="Skeleton-Loading.json" 
+                    Loop="true" 
+                    AutoPlay="true"
+                    WidthRequest="130"
+                    HeightRequest="170"/>      
+                               
+                                    </Grid>
+                         
+                                    
+                                     </ViewCell>
+               </DataTemplate>
+           </Services:RepeaterView.ItemTemplate>
+      </Services:RepeaterView>
+        </ContentView>   
+        </ScrollView>
+            <!---Scroll View END-->
+            </StackLayout>
+        </ScrollView>
+</ContentView>

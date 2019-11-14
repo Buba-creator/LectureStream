@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LectureStream.Views.PlayPage" 
+             xmlns:Local="clr-namespace:LectureStream"
+             xmlns:Embedd="clr-namespace:LectureStream.Services"
+             xmlns:forms="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
+             xmlns:androidGraphics="clr-namespace:Android.Graphics;assembly=Mono.Android;targetPlatform=Android"
+             xmlns:androidContext="clr-namespace:LectureStream.Droid;assembly=LectureStream.Android;targetPlatform=Android"
+             xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
+             xmlns:iosAV="clr-namespace:AVKit;assembly=Xamarin.iOS;targetPlatform=iOS"
+             xmlns:Services="clr-namespace:LectureStream.Services"
+             >
+             <ContentPage.Padding>
+                    <OnPlatform x:TypeArguments="Thickness" iOS="0,15,0,0" ></OnPlatform>
+             </ContentPage.Padding>
+     <ContentPage.Content>
+    <StackLayout x:Name="layout">
+            <StackLayout>
+             <AbsoluteLayout  HorizontalOptions="FillAndExpand" VerticalOptions="Center"> 
+                 <ContentView BackgroundColor="Black" x:Name="VideoView" HeightRequest="240" > 
+                        <ios:UIView />
+                        <androidWidget:VideoView  x:Arguments="{x:Static androidContext:MainActivity.Instance}"  />
+                    </ContentView>           
+                </AbsoluteLayout> 
+                </StackLayout>
+             <Button Text="Back" Pressed="BackButton"/>
+             <Label Text="Title" /> 
+             <Label Text="{Binding Album}" FontSize="Large"/>
+    <StackLayout Padding="0,-10,0,0">        
+            <ScrollView Orientation="Vertical">                            
+                      <StackLayout>
+                <ScrollView Orientation="Horizontal"  >      
+                <ContentView Padding="10,5,10,10"  HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="130">
+        <Services:RepeaterView Orientation="Horizontal" ItemsSource="{Binding Path=Recommended}" Spacing="10" >  
+        <Services:RepeaterView.ItemTemplate>
+               <DataTemplate >  <ViewCell> <Grid>
+             
+                           <Frame WidthRequest="140" HasShadow="true" MinimumHeightRequest="150" HeightRequest="150">  
+                                    <Frame.GestureRecognizers>   
+                                    <TapGestureRecognizer Tapped="Handle_Tapped" CommandParameter="{Binding .}"  NumberOfTapsRequired="1"/>    
+                                    </Frame.GestureRecognizers> 
+                                  <StackLayout Padding="-17,-17,-17,-30">
+                                           <Image MinimumHeightRequest="250" HorizontalOptions="Fill" Aspect="AspectFill" Source="https://cdn2.vectorstock.com/i/1000x1000/76/41/happy-bunny-cartoon-in-the-hole-vector-20757641.jpg" /> 
+                                      <AbsoluteLayout>  
+                                            <StackLayout  x:Name="WhiteBackGround" AbsoluteLayout.LayoutFlags="WidthProportional" AbsoluteLayout.LayoutBounds="0,-39,1,40" HeightRequest="500" >                                                                                  
+                                                  <StackLayout Padding="2,2,2,2" >  <Label FontSize="Small" LineBreakMode="TailTruncation" Text="next" TextColor="Black"/>
+                                                <StackLayout Orientation="Horizontal" Padding="0,-5,0,0"><Label FontSize="Micro" Text="jhgfzxcvbnbvhgcfxcgv" LineBreakMode="TailTruncation"  TextColor="Blue"/>  <Label FontSize="Micro" LineBreakMode="TailTruncation" Text="hjgfdsfgbvcfgbvgf" TextColor="Black"/> </StackLayout>
+                                           </StackLayout> 
+                                            </StackLayout>                                         
+                                        </AbsoluteLayout> 
+                                           </StackLayout>                                          
+                                  </Frame>                     
+                                           </Grid> </ViewCell>
+               </DataTemplate>
+       </Services:RepeaterView.ItemTemplate>
+       </Services:RepeaterView>
+                    </ContentView>
+                  </ScrollView>
+                      <StackLayout>
+                </StackLayout>               
+                    </StackLayout>
+            </ScrollView>           
+    </StackLayout>
+    </StackLayout>
+       </ContentPage.Content>
+</ContentPage>
